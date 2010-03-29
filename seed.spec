@@ -5,12 +5,12 @@
 Summary:	JavaScript interpreter
 Summary(pl.UTF-8):	Interpreter JavaScript
 Name:		seed
-Version:	2.29.91.1
+Version:	2.30.0
 Release:	1
 License:	LGPL v3
 Group:		Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/seed/2.29/%{name}-%{version}.tar.bz2
-# Source0-md5:	26fed68db146f9f5d1276fc7206682fe
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/seed/2.30/%{name}-%{version}.tar.bz2
+# Source0-md5:	dd09d22c6a06b4bbef7320bb6a715c0f
 URL:		http://live.gnome.org/Seed
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.7
@@ -93,6 +93,7 @@ Dokumentacja API biblioteki seed.
 %{__autoheader}
 %{__automake}
 %configure \
+	--disable-silent-rules \
 	%{__enable_disable apidocs gtk-doc} \
 	--with-html-dir=%{_gtkdocdir}
 %{__make}
