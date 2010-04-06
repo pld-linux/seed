@@ -15,6 +15,8 @@ URL:		http://live.gnome.org/Seed
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.7
 BuildRequires:	dbus-glib-devel
+BuildRequires:	docbook-dtd412-xml
+BuildRequires:	gettext-devel
 BuildRequires:	gnome-js-common
 BuildRequires:	gobject-introspection-devel >= 0.6.3
 BuildRequires:	gtk+2-devel
