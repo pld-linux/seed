@@ -9,12 +9,12 @@
 Summary:	JavaScript interpreter
 Summary(pl.UTF-8):	Interpreter JavaScript
 Name:		seed
-Version:	2.31.91
+Version:	2.91.90
 Release:	0.1
 License:	LGPL v3
 Group:		Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/seed/2.31/%{name}-%{version}.tar.bz2
-# Source0-md5:	024aff0a69761f77bc346bbad1a2489b
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/seed/2.91/%{name}-%{version}.tar.bz2
+# Source0-md5:	81f221de0223c46ca06458679774bb06
 URL:		http://live.gnome.org/Seed
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.7
@@ -113,7 +113,7 @@ rm -rf $RPM_BUILD_ROOT
 
 mv -f $RPM_BUILD_ROOT%{_docdir}/seed{,-%{version}}
 
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/seed/libseed*.{a,la} \
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/seed-gtk3/libseed*.{a,la} \
 	$RPM_BUILD_ROOT%{_libdir}/*.la
 
 %if %{without apidocs}
@@ -130,36 +130,36 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc %{_docdir}/seed-%{version}
 %attr(755,root,root) %{_bindir}/seed
-%attr(755,root,root) %{_libdir}/libseed.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libseed.so.0
-%dir %{_libdir}/seed
-%attr(755,root,root) %{_libdir}/seed/libseed_DynamicObject.so
-%attr(755,root,root) %{_libdir}/seed/libseed_cairo.so
-%attr(755,root,root) %{_libdir}/seed/libseed_canvas.so
-%attr(755,root,root) %{_libdir}/seed/libseed_dbusnative.so
-%attr(755,root,root) %{_libdir}/seed/libseed_example.so
-%attr(755,root,root) %{_libdir}/seed/libseed_ffi.so
-%attr(755,root,root) %{_libdir}/seed/libseed_gettext.so
-%attr(755,root,root) %{_libdir}/seed/libseed_gtkbuilder.so
-%attr(755,root,root) %{_libdir}/seed/libseed_libxml.so
-%attr(755,root,root) %{_libdir}/seed/libseed_mpfr.so
-%attr(755,root,root) %{_libdir}/seed/libseed_multiprocessing.so
-%attr(755,root,root) %{_libdir}/seed/libseed_os.so
-%attr(755,root,root) %{_libdir}/seed/libseed_readline.so
-%attr(755,root,root) %{_libdir}/seed/libseed_sandbox.so
-%attr(755,root,root) %{_libdir}/seed/libseed_sqlite.so
-%{_datadir}/seed
+%attr(755,root,root) %{_libdir}/libseed-gtk3.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libseed-gtk3.so.0
+%dir %{_libdir}/seed-gtk3
+%attr(755,root,root) %{_libdir}/seed-gtk3/libseed_DynamicObject.so
+%attr(755,root,root) %{_libdir}/seed-gtk3/libseed_cairo.so
+%attr(755,root,root) %{_libdir}/seed-gtk3/libseed_canvas.so
+%attr(755,root,root) %{_libdir}/seed-gtk3/libseed_dbusnative.so
+%attr(755,root,root) %{_libdir}/seed-gtk3/libseed_example.so
+%attr(755,root,root) %{_libdir}/seed-gtk3/libseed_ffi.so
+%attr(755,root,root) %{_libdir}/seed-gtk3/libseed_gettext.so
+%attr(755,root,root) %{_libdir}/seed-gtk3/libseed_gtkbuilder.so
+%attr(755,root,root) %{_libdir}/seed-gtk3/libseed_libxml.so
+%attr(755,root,root) %{_libdir}/seed-gtk3/libseed_mpfr.so
+%attr(755,root,root) %{_libdir}/seed-gtk3/libseed_multiprocessing.so
+%attr(755,root,root) %{_libdir}/seed-gtk3/libseed_os.so
+%attr(755,root,root) %{_libdir}/seed-gtk3/libseed_readline.so
+%attr(755,root,root) %{_libdir}/seed-gtk3/libseed_sandbox.so
+%attr(755,root,root) %{_libdir}/seed-gtk3/libseed_sqlite.so
+%{_datadir}/seed-gtk3
 %{_mandir}/man1/seed.1*
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libseed.so
-%{_includedir}/seed
+%attr(755,root,root) %{_libdir}/libseed-gtk3.so
+%{_includedir}/seed-gtk3
 %{_pkgconfigdir}/seed.pc
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libseed.a
+%{_libdir}/libseed-gtk3.a
 
 %if %{with apidocs}
 %files apidocs
