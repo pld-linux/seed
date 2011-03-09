@@ -1,8 +1,4 @@
 #
-# TODO:
-# - review configure options
-# - review BR and R
-#
 # Conditional build:
 %bcond_without	apidocs		# do not build and package API docs
 #
@@ -10,7 +6,7 @@ Summary:	JavaScript interpreter
 Summary(pl.UTF-8):	Interpreter JavaScript
 Name:		seed
 Version:	2.91.90
-Release:	0.1
+Release:	1
 License:	LGPL v3
 Group:		Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/seed/2.91/%{name}-%{version}.tar.bz2
@@ -26,7 +22,7 @@ BuildRequires:	gobject-introspection-devel >= 0.9.5
 BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	gtk-doc >= 1.9
 BuildRequires:	gtk-webkit3-devel
-BuildRequires:	intltool >= 0.35.0
+BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libffi-devel
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel
@@ -55,8 +51,8 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki seed
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel
-Requires:	gobject-introspection-devel
-Requires:	gtk-webkit-devel
+Requires:	gobject-introspection-devel >= 0.9.5
+Requires:	gtk-webkit3-devel
 
 %description devel
 Header files for seed library.
@@ -99,8 +95,8 @@ Dokumentacja API biblioteki seed.
 %{__autoheader}
 %{__automake}
 %configure \
-	--with-webkit=3.0 \
 	--disable-silent-rules \
+	--with-webkit=3.0 \
 	%{__enable_disable apidocs gtk-doc} \
 	--with-html-dir=%{_gtkdocdir}
 %{__make}
