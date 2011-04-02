@@ -5,12 +5,12 @@
 Summary:	JavaScript interpreter
 Summary(pl.UTF-8):	Interpreter JavaScript
 Name:		seed
-Version:	2.91.90
+Version:	3.0.0
 Release:	1
 License:	LGPL v3
 Group:		Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/seed/2.91/%{name}-%{version}.tar.bz2
-# Source0-md5:	81f221de0223c46ca06458679774bb06
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/seed/3.0/%{name}-%{version}.tar.bz2
+# Source0-md5:	cd81d33cdb97bd0afa28dbe6e973355d
 URL:		http://live.gnome.org/Seed
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.7
@@ -18,7 +18,7 @@ BuildRequires:	dbus-glib-devel
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-js-common
-BuildRequires:	gobject-introspection-devel >= 0.9.5
+BuildRequires:	gobject-introspection-devel >= 0.10.0
 BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	gtk-doc >= 1.9
 BuildRequires:	gtk-webkit3-devel
@@ -51,7 +51,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki seed
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	glib2-devel
-Requires:	gobject-introspection-devel >= 0.9.5
+Requires:	gobject-introspection-devel >= 0.10.0
 Requires:	gtk-webkit3-devel
 
 %description devel
@@ -104,7 +104,7 @@ Dokumentacja API biblioteki seed.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
+%{__make} -j1 install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 mv -f $RPM_BUILD_ROOT%{_docdir}/seed{,-%{version}}
