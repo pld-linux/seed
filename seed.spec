@@ -5,12 +5,12 @@
 Summary:	JavaScript interpreter
 Summary(pl.UTF-8):	Interpreter JavaScript
 Name:		seed
-Version:	3.2.0
-Release:	2
+Version:	3.8.1
+Release:	1
 License:	LGPL v3
 Group:		Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/seed/3.2/%{name}-%{version}.tar.xz
-# Source0-md5:	792ac48542019bd14f8d639a9e401c0a
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/seed/3.8/%{name}-%{version}.tar.xz
+# Source0-md5:	f5afeb04343e0cb56d2396f0d0458988
 URL:		http://live.gnome.org/Seed
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.7
