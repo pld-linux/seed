@@ -3,12 +3,12 @@
 %bcond_without	apidocs		# do not build and package API docs
 #
 Summary:	JavaScript interpreter
-Summary(pl.UTF-8):	Interpreter JavaScript
+Summary(pl.UTF-8):	Interpreter JavaScriptu
 Name:		seed
 Version:	3.8.1
 Release:	1
 License:	LGPL v3
-Group:		Applications
+Group:		Development/Languages
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/seed/3.8/%{name}-%{version}.tar.xz
 # Source0-md5:	f5afeb04343e0cb56d2396f0d0458988
 URL:		http://live.gnome.org/Seed
@@ -26,12 +26,13 @@ BuildRequires:	gtk-webkit3-devel
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libffi-devel
 BuildRequires:	libtool
-BuildRequires:	libxml2-devel
+BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	mpfr-devel
 BuildRequires:	pkgconfig
 BuildRequires:	readline-devel
 BuildRequires:	sqlite3-devel
 BuildRequires:	tar >= 1:1.22
+BuildRequires:	xorg-lib-libXScrnSaver-devel
 BuildRequires:	xz
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -45,8 +46,8 @@ application to be extensible in JavaScript.
 %description -l pl.UTF-8
 Seed jest biblioteką i interpreterem, dynamicznie łączącym (poprzez
 GObjectIntrospection) silnik WebKit JavaScriptCore z GNOME. Seed
-umożliwia pisanie samodzielnych aplikacji w JavaScript, jak również
-łatwe ich rozszerzanie w JavaScript.
+umożliwia pisanie samodzielnych aplikacji w JavaScripcie, jak również
+łatwe ich rozszerzanie w JavaScripcie.
 
 %package devel
 Summary:	Header files for seed library
@@ -98,10 +99,11 @@ Dokumentacja API biblioteki seed.
 %{__autoheader}
 %{__automake}
 %configure \
-	--disable-silent-rules \
-	--with-webkit=3.0 \
 	%{__enable_disable apidocs gtk-doc} \
-	--with-html-dir=%{_gtkdocdir}
+	--disable-silent-rules \
+	--enable-xorg-module \
+	--with-html-dir=%{_gtkdocdir} \
+	--with-webkit=3.0
 %{__make}
 
 %install
@@ -147,6 +149,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/seed-gtk3/libseed_readline.so
 %attr(755,root,root) %{_libdir}/seed-gtk3/libseed_sandbox.so
 %attr(755,root,root) %{_libdir}/seed-gtk3/libseed_sqlite.so
+%attr(755,root,root) %{_libdir}/seed-gtk3/libseed_xorg.so
 %{_datadir}/seed-gtk3
 %{_mandir}/man1/seed.1*
 
