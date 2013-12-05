@@ -1,0 +1,11 @@
+--- seed-3.8.1/libseed/seed-types.c~	2013-04-16 09:58:20.000000000 +0200
++++ seed-3.8.1/libseed/seed-types.c	2013-12-05 22:18:46.317881733 +0100
+@@ -1213,7 +1213,7 @@
+           {
+             char *error_message = g_strdup_printf ("Unable to make object from hash table indexed with values of type %s", g_type_tag_to_string (key_type_tag));
+             seed_make_exception (ctx, exception, "ArgumentError",
+-                                 error_message);
++                                 "%s", error_message);
+             g_free (error_message);
+             return JSValueMakeNull (ctx);
+           }
