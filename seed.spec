@@ -1,12 +1,12 @@
 #
 # Conditional build:
 %bcond_without	apidocs		# do not build and package API docs
-#
+
 Summary:	JavaScript interpreter
 Summary(pl.UTF-8):	Interpreter JavaScriptu
 Name:		seed
 Version:	3.8.1
-Release:	2
+Release:	3
 License:	LGPL v2+
 Group:		Development/Languages
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/seed/3.8/%{name}-%{version}.tar.xz
@@ -82,6 +82,9 @@ Summary:	seed library API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki seed
 Group:		Documentation
 Requires:	gtk-doc-common
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 API documentation for seed library.
@@ -110,7 +113,6 @@ Dokumentacja API biblioteki seed.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} -j1 install \
 	DESTDIR=$RPM_BUILD_ROOT
 
