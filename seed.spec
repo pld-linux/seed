@@ -18,7 +18,7 @@ BuildRequires:	automake >= 1:1.7
 BuildRequires:	cairo-devel
 BuildRequires:	dbus-glib-devel
 BuildRequires:	docbook-dtd412-xml
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gnome-js-common
 BuildRequires:	gobject-introspection-devel >= 0.10.0
 BuildRequires:	gtk+3-devel >= 3.0.0
