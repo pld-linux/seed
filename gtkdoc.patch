@@ -1,0 +1,11 @@
+--- seed-3.8.1/doc/modules/Makefile.am~	2013-04-16 09:58:20.000000000 +0200
++++ seed-3.8.1/doc/modules/Makefile.am	2016-10-20 09:20:47.464596674 +0200
+@@ -5,7 +5,7 @@
+ html/index.html: version.xml book.xml sqlite/sqlite.xml sqlite/sqlite-funcs.xml readline/readline.xml readline/readline-funcs.xml make-functions.js gtkbuilder/gtkbuilder-funcs.xml gtkbuilder/gtkbuilder.xml sandbox/sandbox.xml sandbox/sandbox-funcs.xml
+ 	mkdir -p html;
+ 	gtkdoc-mkhtml "Seed" book.xml;
+-	mv *.html *.css *.png *.sgml *.devhelp* html
++	mv *.html *.css *.png *.devhelp* html
+ 
+ bookdir = $(docdir)/modules/html
+ book_DATA = html/index.html
