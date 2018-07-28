@@ -6,14 +6,14 @@ Summary:	JavaScript interpreter
 Summary(pl.UTF-8):	Interpreter JavaScriptu
 Name:		seed
 Version:	3.8.1
-Release:	7
+Release:	8
 License:	LGPL v2+
 Group:		Development/Languages
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/seed/3.8/%{name}-%{version}.tar.xz
 # Source0-md5:	f5afeb04343e0cb56d2396f0d0458988
 Patch0:		format-security.patch
 Patch1:		gtkdoc.patch
-URL:		http://live.gnome.org/Seed
+URL:		https://wiki.gnome.org/Seed
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.7
 BuildRequires:	cairo-devel
@@ -99,6 +99,7 @@ Dokumentacja API biblioteki seed.
 %patch1 -p1
 
 %build
+%{__gtkdocize}
 %{__intltoolize}
 %{__libtoolize}
 %{__aclocal}
@@ -118,7 +119,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} -j1 install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-mv -f $RPM_BUILD_ROOT%{_docdir}/seed{,-%{version}}
+%{__mv} $RPM_BUILD_ROOT%{_docdir}/seed{,-%{version}}
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/seed-gtk3/libseed*.{a,la} \
 	$RPM_BUILD_ROOT%{_libdir}/*.la
