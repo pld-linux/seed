@@ -1,0 +1,10 @@
+--- seed-3.8.1/libseed/seed-types.c.orig	2018-07-31 19:08:03.680602811 +0200
++++ seed-3.8.1/libseed/seed-types.c	2018-07-31 19:09:20.513935269 +0200
+@@ -347,6 +347,7 @@
+   switch (element_type)
+     {
+     case GI_TYPE_TAG_UTF8:
++    case GI_TYPE_TAG_FILENAME:
+       {
+ 	gchar **strresult = g_new0 (gchar *, length + 1);
+ 
