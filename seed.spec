@@ -6,7 +6,7 @@ Summary:	JavaScript interpreter
 Summary(pl.UTF-8):	Interpreter JavaScriptu
 Name:		seed
 Version:	3.8.1
-Release:	10
+Release:	11
 License:	LGPL v2+
 Group:		Development/Languages
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/seed/3.8/%{name}-%{version}.tar.xz
