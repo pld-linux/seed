@@ -14,6 +14,7 @@ Source0:	https://download.gnome.org/sources/seed/3.8/%{name}-%{version}.tar.xz
 Patch0:		format-security.patch
 Patch1:		gtkdoc.patch
 Patch2:		%{name}-array-filename.patch
+Patch3:		%{name}-ac.patch
 URL:		https://wiki.gnome.org/Seed
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1:1.7
@@ -97,6 +98,7 @@ Dokumentacja API biblioteki seed.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %{__gtkdocize}
