@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_without	apidocs		# do not build and package API docs
+%bcond_without	apidocs		# gtk-doc based API documentation
 
 Summary:	JavaScript interpreter
 Summary(pl.UTF-8):	Interpreter JavaScriptu
@@ -9,7 +9,7 @@ Version:	3.8.1
 Release:	12
 License:	LGPL v2+
 Group:		Development/Languages
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/seed/3.8/%{name}-%{version}.tar.xz
+Source0:	https://download.gnome.org/sources/seed/3.8/%{name}-%{version}.tar.xz
 # Source0-md5:	f5afeb04343e0cb56d2396f0d0458988
 Patch0:		format-security.patch
 Patch1:		gtkdoc.patch
