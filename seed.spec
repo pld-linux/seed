@@ -6,7 +6,7 @@ Summary:	JavaScript interpreter
 Summary(pl.UTF-8):	Interpreter JavaScriptu
 Name:		seed
 Version:	3.8.1
-Release:	12
+Release:	13
 License:	LGPL v2+
 Group:		Development/Languages
 Source0:	https://download.gnome.org/sources/seed/3.8/%{name}-%{version}.tar.xz
@@ -34,6 +34,7 @@ BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	mpfr-devel
 BuildRequires:	pkgconfig
 BuildRequires:	readline-devel
+BuildRequires:	rpm-build >= 4.6
 BuildRequires:	sqlite3-devel
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-lib-libXScrnSaver-devel
